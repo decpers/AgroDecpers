@@ -158,13 +158,13 @@ $(function () {
     cajaMostrarMonto.removeClass("d-none");
     cajaIngresarPrecio.removeClass("d-none");
     cajaMostrarMonto.html(
-      "En " +
+      "En <b>" +
         sacos +
-        " sacos a " +
+        "</b> sacos a <b>" +
         precio +
-        " dólares son " +
+        "</b> dólares son <b>" +
         montoTotal +
-        " dólares."
+        "</b> dólares."
     );
   }
 
@@ -227,7 +227,7 @@ $(function () {
     cajaSacosCalculados.removeClass("d-none");
     cajaSacosCalculados.removeClass("alert-danger");
     cajaSacosCalculados.html(
-      "Respuesta: Son " + sacosTotales + " sacos."
+      "Respuesta: Son <b>" + sacosTotales + "</b> sacos."
     );
   }
 });

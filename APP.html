@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
   integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
+  <!-- CSS local -->
+   <link rel="stylesheet" href="css/app.css">
+
   <!-- JQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -24,13 +27,9 @@
 </head>
 
 <body>
-  <div class="container-fluid">
-    <nav class="navbar navbar-dark bg-dark container-fluid">
-      <a  style="font-family: 'Righteous', cursive;" class="navbar-brand  text-white"  href="https://www.facebook.com/decpers">DECPERS</a>
-      <button class=" navbar-toggler text-white"  type="button" data-toggle="collapse" data-target="#navbarSupportedContent"  aria-controls="navbarSupportedContent" aria-expanded="false"aria-label="Toggle  navigation">
-        <span class=" navbar-toggler-icon">
-        </span>
-      </button>
+  <div class="box-main">
+    <nav class="nav-style">
+      <a href="https://www.facebook.com/decpers"><img id="logo" src="images/decpers-icon.png" alt=""></a>
       <div class="collapse  navbar-collapse"  id="navbarSupportedContent">         
           <label class="d-flex justify-content-center text-white" style="font-family: 'Kumbh Sans', sans-serif;">
             AGRO-VENTAS         
@@ -42,7 +41,7 @@
     </nav>    
 
     <!-- Código del formulario completo -->   
-    <div style="width: 18rem;" class="mt-3 container-fluid text-center card d-flex">
+    <div class="form-style">
       <div class="mt-3 d-flex justify-content-center bg-success text-white">
         <b>
           <label style="margin-top:.5rem;">Calculadora Agrícola
@@ -50,8 +49,7 @@
         </b> 
       </div>
       <hr>
-
-      <div>
+      <div class="form-bottom">
         <label>Peso Bruto (kg)</label>
         <input type="number" class="form-control" id="inputPesoBruto" 
         placeholder="ingrese peso bruto" disabled="true">
@@ -64,25 +62,19 @@
       </div>
 
       <div class="form-group d-flex justify-content-between" >
-        <button id="botonHabilitar" class="btn btn-success btn-md">Habilitar</button> 
+        <button id="btnHabilitarCalcular" class="btn btn-success btn-md">Habilitar</button> 
         <button id="limpiarTodo" class=" ml-auto btn btn-warning btn-md">Limpiar</button> 
       </div>
-
       <hr>
-
       <div id="cajaSacosCalculados" class="container text-center alert alert-info d-none " role="alert">
       </div>
-
       <div id="cajaMostrarMonto" class="container text-center alert alert-info d-none" role="alert"> 
       </div>
-
-      <div id="cajaIngresarPrecio" class="container-fluid d-none">
-
-        <hr>
-
-        <span id="Precio" Class="text-dark">Ingrese precio</span>
+      <hr>
+      <div id="cajaIngresarPrecio" class="price-data d-none">
+        <span id="Precio" class="price-title">Ingrese precio</span>
         <input value="0" type="number" id="inputPrecio" maxlength="5" class="form-control">
-        <button  id="btnCalcularMonto" class="mt-3 ml-auto btn btn-dark btn-md mb-3">Total</button>
+        <button  id="btnCalcularMonto" class="btn btn-dark">Calcular Monto</button>
 
       </div>
 
@@ -91,7 +83,7 @@
     <footer class="page-footer font-small blue">   
       <!-- Copyright --> 
       <div class="mt-3 footer-copyright text-center py-3">
-        © 2020 Copyright: 
+        © <span id="añoActual"></span> Copyright: 
         <a href="https://www.facebook.com/decpers">Decpers</a> 
       </div> 
       <!-- Copyright -->      
@@ -99,10 +91,11 @@
 
   </div>
 
-
+  <!-- Libreria para ajustar los decimales-->
+  <script src="scripts/decimal.min.js"></script>
   <!--  enlazando el JavaScript de nuestra app -->
   <script type="text/JavaScript" src="scripts/script.js"></script>
-
+ 
   <!-- JavaScript de Bootstrap -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
   integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
